@@ -1,4 +1,21 @@
-<h1><%= link_to post.title, post_path(post) %></h1>
-<p><%= post.topic %></p>
-<h4><%= post.summary %></h4>
+<article class="post">
+  <section class="post-head">
+    <h2><%= link_to post.title, post_path(post) %></h2>
+
+    <section clas="post-summary">
+      <h4><%= post.topic %></h4>
+      <p><%= post.summary %></p>
+      <%= image_tag post.image.url(:thumb), class: 'img-thumbnail thumb' if post.image? %>
+    </section>
+    <% if user_signed_in? %>
+    <small>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      |
+      <%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: 'Are you sure?'} %>
+    </small>
+      <% end %>
+  </section>
+  <div class="dropdown-divider"></div>
 <br>
+<br>
+</article>

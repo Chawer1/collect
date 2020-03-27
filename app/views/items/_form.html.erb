@@ -1,0 +1,36 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="trix.css">
+  <script type="text/javascript" src="trix.js"></script>
+</head>
+<% if @item.errors.any? %>
+  <div class="alert alert-danger">
+    <h5><%= t('common.errors') %></h5>
+    <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_for @item, html: {multipart: true } do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :all_tags %>
+    <%= f.text_field :all_tags  , class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :post_id %>
+    <%= f.collection_select :post_id, Post.order(:title), :id, :title, { include_blank: true} , class: 'form-control' %>
+  </div>
+  <br>
+
+  <div class="form-group">
+    <%= f.submit 'Save', class: 'btn btn-primary'%>
+    <%= link_to t('common.back'), :back, class: 'btn btn-outline-secondary' %>
+  </div>
+<% end %>

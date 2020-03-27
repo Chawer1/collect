@@ -9,9 +9,18 @@ gem 'devise'
 gem 'bootstrap'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'trix-rails', require: 'trix'
+gem 'redactor-rails'
+gem 'dropzonejs-rails'
+gem 'tinymce-rails'
+gem 'ancestry'
+gem 'rails-assets-tether'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
+gem 'active_storage_drag_and_drop'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'

@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @posts = Post.all
   end
 
   def show
     @post = Post.find(params[:id])
+    @items = Item.where(post_id: [@post])
   end
 
   def new
@@ -14,9 +16,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post, success: 'New Collection Created'
+      redirect_to posts_path, success: 'New Item Created'
     else
-      render :new, danger: 'New collection created failed'
+      render :new, danger: 'New item created failed'
     end
   end
 
@@ -36,7 +38,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path, success: 'Collection delete successful'
+    redirect_to posts_path, success: 'Item delete successful'
   end
 
   private

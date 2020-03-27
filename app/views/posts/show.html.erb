@@ -1,12 +1,52 @@
 <h1><%= @post.title %></h1>
-<h2><%= @post.topic %></h2>
+<h4><%=I18n.t('items.category') %>: <%= @post.topic %></h4>
 <p><%= @post.summary %></p>
-<%= link_to 'Edit', edit_post_path(@post) %>
-<%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %>
 
-<section class="post-body">
-  <%= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>
+<br>
+<br>
+<h1><%=I18n.t('items.index.title') %></h1>
+<br>
+<!--<div class="button-panel">-->
+  <%#= link_to 'New item', new_item_path, class: 'btn btn-outline-primary btn-sm'%>
+<!--</div>-->
+<section>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th><%=I18n.t('items.name') %></th>
+      <th><%=I18n.t('items.tag') %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= @items.each_with_index do |item, index|%>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= item.name %></td>
+        <td><%= raw item.tags.map(&:name).map{|t| link_to t, tag_path(t), class: 'badge badge-secondary'}.join(' ') %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %>
+        |
+        <%= link_to 'Delete', item_path(item), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </section>
+
+<div class="container-main">
+<%= render 'disqus' %>
+</div>
+
+<%# @item.each do |item| %>
+<!--  <ul>-->
+<!--    <li><%#= item.name %></li>-->
+<!--  </ul>-->
+<%# end %>
+<!--<h1><%#= @item.name %></h1>-->
+
+<!--<section class="post-body">-->
+<%#= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>
+<!--</section>-->
 <br>
 
 <p></p>

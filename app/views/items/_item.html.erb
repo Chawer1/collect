@@ -1,0 +1,19 @@
+<article class="item">
+  <section class="post-head">
+    <h1><%= link_to item.name, item_path(item) %></h1>
+    <p><%= item.name %></p>
+    <section clas="post-summary clearfix">
+      <h4><%= item.tag %></h4>
+    </section>
+    <small>
+      <%= link_to 'Edit', edit_item_path(item) %>
+      |
+      <%= link_to 'Delete', item_path(item), method: :delete, data: {confirm: 'Are you sure?'} %>
+    </small>
+  </section>
+  <section class="footer-summary">
+    <%= raw item.tags.map(&:name).map{|t| link_to t, tag_path(t), class: 'badge badge-secondary'}.join(' ') %>
+  </section>
+
+  <br>
+</article>

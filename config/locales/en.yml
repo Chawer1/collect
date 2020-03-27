@@ -42,3 +42,18 @@ en:
       title: 'New collection'
     edit:
       title: 'Edit collection'
+  items:
+    index:
+      title: 'Items'
+    form:
+      submit: 'Save'
+    new:
+      title: 'New item'
+    edit:
+      title: 'Edit item'
+    tag: 'Tags'
+    name: 'Name'
+    category: 'Category'
+    account: 'Account'
+    mc: 'My collection'
+    home: 'Home'

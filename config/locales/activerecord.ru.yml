@@ -7,6 +7,18 @@ ru:
         title: 'Название'
         summary: 'Краткое описание'
         topic: 'Тема'
+      items:
+        index:
+          title: 'Айтемы'
+        form:
+          submit: 'Подтвердить'
+        new:
+          title: 'Новый айтем'
+        edit:
+          title: 'Редактировать'
+        name: "Название"
+        delete: 'Удалить'
+
     errors:
       messages:
         blank: 'Не может быть пустым'

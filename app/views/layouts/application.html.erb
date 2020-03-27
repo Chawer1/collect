@@ -26,21 +26,26 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <h4 class="nav-link" href="#"><%= link_to 'Home', posts_path, class: "btn btn-default"%><span class="sr-only">(current)</span></h4>
+        <h4 class="nav-link" href="#"><%= link_to t('items.home'), posts_path, class: "btn btn-primary"%><span class="sr-only">(current)</span></h4>
       </li>
 
       <li class="nav-item active">
-        <h4 class="nav-link" href="#"><%= link_to 'New Collection', new_post_path, class: "btn btn-default" %></h4>
+        <h4 class="nav-link" href="#"><%= link_to t('posts.new.title'), new_post_path, class: "btn btn-outline-default" %></h4>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">A</a>
+        <h4 class="nav-link" href="#"><%= link_to t('items.new.title'), new_item_path, class: 'btn btn-outline-default'%>
+        </h4>
       </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"><%=t('items.mc')%></a>
+      </li>
+
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Account
-          </a>
+          <h4 class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%=t('items.account')%>
+          </h4>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#"><%= link_to 'Edit', edit_user_registration_path, class: 'btn btn-outline-primary pull-xs-center'%></a>
             <div class="dropdown-divider"></div>
@@ -59,9 +64,6 @@
           </div>
       <% end %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">My collection</a>
-      </li>
 
 
     </ul>
@@ -69,12 +71,16 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <a class="nav-item<%= "active" if I18n.locale == :ru %>">
+      <%= link_to "RU", {locale: :ru}, class: 'btn btn-default btn-sm'%>
+    </a>
+    <a class="nav-item<%= "active" if I18n.locale == :en %>">
+      <%= link_to "EN", {locale: :en}, class: 'btn btn-default btn-sm'%>
+    </a>
   </div>
 </nav>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-
-<div class="container main">
   <div class="row">
     <div class="col-md-12">
       <% flash.each do |name, message| %>
@@ -84,7 +90,39 @@
       <% end %>
     </div>
   </div>
-</div>
+<%# if current_user.admin %>
+<!--  <form id="frm1">-->
+<!--    <table class="table">-->
+<!--      <thead class="thead-dark">-->
+<!--      <tr>-->
+<!--        <th><input type="checkbox" name="checkall" onclick="checkedAll(frm1)" /></th>-->
+<!--        <th>Delete</th>-->
+<!--        <th scope="col">ID</th>-->
+<!--        <th scope="col">Email</th>-->
+<!--        <th scope="col">Name</th>-->
+<!--        <th scope="col">Creation time</th>-->
+<!--        <th scope="col">Last login</th>-->
+<!--        <th scope="col">Status(Online/Offline)</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      </head>-->
+<!--      <body>-->
+<!--      <tbody>-->
+      <%# @users.each do |user| %>
+<!--        <tr>-->
+<!--          <td><input type="checkbox" name="foo" value="bar1"/></td>-->
+<!--          <td><%#= link_to "delete", user, method: :delete %></td>-->
+<!--          <td><%#= user.id%></td>-->
+<!--          <td><%#= user.email %></td>-->
+<!--          <td><%#= user.firstname %></td>-->
+<!--          <td><%#= user.created_at %></td>-->
+<!--          <td><%#= user.updated_at  %></td>-->
+<!--          <td><%#= user.online? %></td>-->
+<!--        </tr>-->
+      <%# end %>
+<!--      </tbody>-->
+<!--    </table>-->
+<!--  </form>-->
 <%= yield %>
 </body>
 </html>
