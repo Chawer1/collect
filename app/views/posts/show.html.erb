@@ -1,6 +1,7 @@
 <h1><%= @post.title %></h1>
 <h4><%=I18n.t('items.category') %>: <%= @post.topic %></h4>
 <p><%= @post.summary %></p>
+<!--<p><%#= @post.user.email %></p>-->
 
 <br>
 <br>
@@ -11,11 +12,12 @@
 <!--</div>-->
 <section>
   <table class="table">
-    <thead>
+    <thead class="thead-dark">
     <tr>
       <th>ID</th>
       <th><%=I18n.t('items.name') %></th>
       <th><%=I18n.t('items.tag') %></th>
+      <th></th>
     </tr>
     </thead>
     <tbody>

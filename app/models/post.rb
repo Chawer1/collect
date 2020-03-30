@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  belongs_to :user
   # has_rich_text :image
   # has_many: taggings
   # has_many: tags, through: taggings

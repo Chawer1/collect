@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    # @post.user = current_user
     if @post.save
       redirect_to posts_path, success: 'New Item Created'
     else
@@ -40,6 +41,8 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path, success: 'Item delete successful'
   end
+
+
 
   private
   def post_params

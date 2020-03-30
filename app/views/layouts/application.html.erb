@@ -33,10 +33,16 @@
         <h4 class="nav-link" href="#"><%= link_to t('posts.new.title'), new_post_path, class: "btn btn-outline-default" %></h4>
       </li>
 
+
       <li class="nav-item">
         <h4 class="nav-link" href="#"><%= link_to t('items.new.title'), new_item_path, class: 'btn btn-outline-default'%>
         </h4>
       </li>
+      <% if current_user && current_user.admin %>
+      <li class="nav-item active">
+        <h4 class="nav-link" href="#"><%= link_to 'Users', all_users_path, class: "btn btn-outline-default" %></h4>
+      </li>
+<% end %>
       <li class="nav-item">
         <a class="nav-link disabled" href="#"><%=t('items.mc')%></a>
       </li>
@@ -91,38 +97,6 @@
     </div>
   </div>
 <%# if current_user.admin %>
-<!--  <form id="frm1">-->
-<!--    <table class="table">-->
-<!--      <thead class="thead-dark">-->
-<!--      <tr>-->
-<!--        <th><input type="checkbox" name="checkall" onclick="checkedAll(frm1)" /></th>-->
-<!--        <th>Delete</th>-->
-<!--        <th scope="col">ID</th>-->
-<!--        <th scope="col">Email</th>-->
-<!--        <th scope="col">Name</th>-->
-<!--        <th scope="col">Creation time</th>-->
-<!--        <th scope="col">Last login</th>-->
-<!--        <th scope="col">Status(Online/Offline)</th>-->
-<!--      </tr>-->
-<!--      </thead>-->
-<!--      </head>-->
-<!--      <body>-->
-<!--      <tbody>-->
-      <%# @users.each do |user| %>
-<!--        <tr>-->
-<!--          <td><input type="checkbox" name="foo" value="bar1"/></td>-->
-<!--          <td><%#= link_to "delete", user, method: :delete %></td>-->
-<!--          <td><%#= user.id%></td>-->
-<!--          <td><%#= user.email %></td>-->
-<!--          <td><%#= user.firstname %></td>-->
-<!--          <td><%#= user.created_at %></td>-->
-<!--          <td><%#= user.updated_at  %></td>-->
-<!--          <td><%#= user.online? %></td>-->
-<!--        </tr>-->
-      <%# end %>
-<!--      </tbody>-->
-<!--    </table>-->
-<!--  </form>-->
 <%= yield %>
 </body>
 </html>

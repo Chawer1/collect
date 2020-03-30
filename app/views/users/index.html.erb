@@ -1,0 +1,29 @@
+<form id="frm1">
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+<!--      <th><input type="checkbox" name="checkall" onclick="checkedAll(frm1)" /></th>-->
+      <th scope="col">ID</th>
+      <th scope="col">Email</th>
+      <th scope="col">Creation time</th>
+      <th scope="col">Last login</th>
+<!--      <th scope="col">Status</th>-->
+      <th>Delete</th>
+    </tr>
+    </thead>
+    </head>
+    <body>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+<!--        <td><input type="checkbox" name="foo" value="bar1"/></td>-->
+        <td><%= user.id%></td>
+        <td><%= user.email %></td>
+        <td><%= user.created_at %></td>
+        <td><%= user.updated_at  %></td>
+        <td><%= link_to 'Delete', user_path(user), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</form>

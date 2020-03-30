@@ -5,6 +5,7 @@
     <section clas="post-summary">
       <h4><%= post.topic %></h4>
       <p><%= post.summary %></p>
+<!--      <p><%#= post.user.email %></p>-->
       <%= image_tag post.image.url(:thumb), class: 'img-thumbnail thumb' if post.image? %>
     </section>
     <% if user_signed_in? %>

@@ -12,5 +12,8 @@ Rails.application.routes.draw do
     resources :items
   end
   root to: 'posts#index'
+  get '/users/index', as: 'all_users'
+  get '/users/update', as: 'update_users'
+  resources :users
   end
 end
