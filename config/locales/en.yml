@@ -57,3 +57,5 @@ en:
     account: 'Account'
     mc: 'My collection'
     home: 'Home'
+  users:
+    all_users: 'Users'

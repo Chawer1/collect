@@ -26,3 +26,9 @@ ru:
     account: 'Аккаунт'
     mc: 'Моя коллекция'
     home: 'Главная'
+  users:
+    all_users: 'Пользователи'
+    email: 'Почта'
+    create_time: 'Дата создания'
+    last_login: 'Последний раз был в сети'
+    delete: 'Удалить'

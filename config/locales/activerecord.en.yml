@@ -1,0 +1,26 @@
+en:
+  activerecord:
+    models:
+      post: 'Collection'
+    attributes:
+      post:
+        title: 'Name'
+        summary: 'Summary'
+        topic: 'Topic'
+      item:
+        index:
+          title: 'Items'
+        form:
+          submit: 'Save'
+        new:
+          title: 'New Item'
+        edit:
+          title: 'Edit'
+        name: "Name"
+        delete: 'Delete'
+        tags: 'Tags'
+        post_id: 'Collection'
+
+    errors:
+      messages:
+        blank: "Can't be empty"

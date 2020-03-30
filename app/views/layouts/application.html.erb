@@ -40,7 +40,7 @@
       </li>
       <% if current_user && current_user.admin %>
       <li class="nav-item active">
-        <h4 class="nav-link" href="#"><%= link_to 'Users', all_users_path, class: "btn btn-outline-default" %></h4>
+        <h4 class="nav-link" href="#"><%= link_to t('users.all_users'), all_users_path, class: "btn btn-outline-default" %></h4>
       </li>
 <% end %>
       <li class="nav-item">
