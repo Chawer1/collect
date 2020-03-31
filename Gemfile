@@ -15,6 +15,9 @@ gem 'dropzonejs-rails'
 gem 'tinymce-rails'
 gem 'ancestry'
 gem 'rails-assets-tether'
+gem 'omniauth'
+gem 'omniauth-vkontakte'
+gem 'omniauth-facebook'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
