@@ -5,6 +5,10 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def search
+    @items = Item.where("name LIKE ?", "%" + params[:q] + "%")
+  end
+
   def show
     @item = Item.find(params[:id])
 

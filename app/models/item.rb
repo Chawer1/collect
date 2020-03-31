@@ -1,14 +1,11 @@
 class Item < ApplicationRecord
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
   has_many :taggeds, dependent: :destroy
   has_many :tags, through: :taggeds, dependent: :destroy
   belongs_to :post
   validates :name, presence: true
-  mappings do
-    indexes :title,  analyzer: 'english'
-    indexes :text,  analyzer: 'english'
-  end
+  # mappings do
+  #   indexes :title,  analyzer: 'english'
+  #   indexes :text,  analyzer: 'english'
 
   def self.search(query)
     __elasticsearch__.search(

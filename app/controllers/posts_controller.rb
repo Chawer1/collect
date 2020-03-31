@@ -17,9 +17,9 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     # @post.user = current_user
     if @post.save
-      redirect_to posts_path, success: 'New Item Created'
+      redirect_to posts_path, success: 'New collection created'
     else
-      render :new, danger: 'New item created failed'
+      render :new, danger: 'New collection created failed'
     end
   end
 
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path, success: 'Item delete successful'
+    redirect_to posts_path, success: 'Collection delete successful'
   end
 
 
