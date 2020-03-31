@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    # @post = current_user.posts.create(params)
     # @post.user = current_user
     if @post.save
       redirect_to posts_path, success: 'New collection created'
