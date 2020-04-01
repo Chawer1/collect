@@ -1,6 +1,6 @@
 # encoding: utf-8
 class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
-  include RedactorRails::Backend::CarrierWave
+  include RedactorRails::CarrierWave
 
   # Include RMagick or ImageScience support:
   # include CarrierWave::RMagick

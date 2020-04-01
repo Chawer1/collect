@@ -8,6 +8,9 @@ gem 'devise'
 gem 'bootstrap'
 gem 'carrierwave'
 gem 'mini_magick'
+gem "aws-sdk-s3", require: false
+gem 'activestorage'
+gem "azure-storage-blob", require: false
 gem 'trix-rails', require: 'trix'
 gem 'dropzonejs-rails'
 gem 'tinymce-rails'
