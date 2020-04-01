@@ -6,7 +6,7 @@ ru:
       post:
         title: 'Название'
         summary: 'Краткое описание'
-        topic: 'Тема'
+        topic: 'Категория'
       item:
         index:
           title: 'Айтемы'

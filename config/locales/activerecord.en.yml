@@ -5,8 +5,8 @@ en:
     attributes:
       post:
         title: 'Name'
-        summary: 'Summary'
-        topic: 'Topic'
+        summary: 'Description'
+        topic: 'Category'
       item:
         index:
           title: 'Items'

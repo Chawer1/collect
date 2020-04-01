@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @items = Item.where(post_id: [@post])
+    # @users = @user.post
   end
 
   def new

@@ -7,18 +7,18 @@ class Item < ApplicationRecord
   #   indexes :title,  analyzer: 'english'
   #   indexes :text,  analyzer: 'english'
 
-  def self.search(query)
-    __elasticsearch__.search(
-        {
-            query: {
-                multi_match: {
-                    query: query,
-                    fields: ['title', 'text']
-                }
-            }
-        }
-    )
-  end
+  # def self.search(query)
+  #   __elasticsearch__.search(
+  #       {
+  #           query: {
+  #               multi_match: {
+  #                   query: query,
+  #                   fields: ['title', 'text']
+  #               }
+  #           }
+  #       }
+  #   )
+  # end
   def all_tags
     self.tags.map(&:name).join(', ')
   end

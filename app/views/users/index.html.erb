@@ -1,5 +1,5 @@
 <form id="frm1">
-  <table class="table">
+  <table class="table table-hover">
     <thead class="thead-dark">
     <tr>
 <!--      <th><input type="checkbox" name="checkall" onclick="checkedAll(frm1)" /></th>-->
@@ -7,7 +7,7 @@
       <th scope="col"><%= t('users.email') %></th>
       <th scope="col"><%= t('users.create_time') %></th>
       <th scope="col"><%= t('users.last_login') %></th>
-<!--      <th scope="col">Status</th>-->
+      <th scope="col">Admin</th>
       <th><%= t('users.delete') %></th>
     </tr>
     </thead>
@@ -21,6 +21,7 @@
         <td><%= user.email %></td>
         <td><%= user.created_at %></td>
         <td><%= user.updated_at  %></td>
+        <td><%= user.admin? %></td>
         <td><%= link_to 'Delete', user_path(user), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-danger btn-sm' %></td>
       </tr>
     <% end %>

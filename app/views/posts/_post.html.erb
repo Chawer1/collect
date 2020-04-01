@@ -1,22 +1,19 @@
 <article class="post">
   <section class="post-head">
-    <h2><%= link_to post.title, post_path(post) %></h2>
-
-    <section clas="post-summary">
-      <h4><%= post.topic %></h4>
+    <h2><%= link_to post.title, post_path(post), class: 'text-dark' %></h2>
+  </section>
+  <section clas="post-summary clearfix" style="margin-left: 5px;">
+      <h5 class="text-secondary"><%= post.topic %></h5>
+      <%= image_tag post.image.url(:thumb), style: 'float: left; margin-right: 7px;' ,class: 'img-thumbnail thumb' if post.image? %>
       <p><%= post.summary %></p>
-<!--      <p><%#= post.user.email %></p>-->
-      <%= image_tag post.image.url(:thumb), class: 'img-thumbnail thumb' if post.image? %>
-    </section>
     <% if user_signed_in? %>
-    <small>
-      <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-outline-dark btn-sm' %>
-      |
-      <%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-dark btn-sm' %>
-    </small>
-      <% end %>
+      <small>
+        <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-outline-dark btn-sm', style:'margin-top: 12px; margin-right: 5px;float:left;' %>
+        <%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-dark btn-sm', style:'margin-top: 12px;' %>
+      </small>
+    <% end %>
   </section>
   <div class="dropdown-divider"></div>
-<br>
-<br>
+  <br>
+  <br>
 </article>

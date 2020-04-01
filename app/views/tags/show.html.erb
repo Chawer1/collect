@@ -18,7 +18,7 @@
         <tr>
           <td><%= index + 1 %></td>
           <td><%= item.name %></td>
-          <td><%= raw item.tags.map(&:name).map{|t| link_to t, tag_path(t), class: 'badge badge-secondary'}.join(' ') %></td>
+          <td><%= raw item.tags.map(&:name).map{|t| link_to t, tag_path(t), class: 'badge badge-secondary'}.join(', ') %></td>
           <td><%= link_to 'Edit', edit_item_path(item) %>
             |
             <%= link_to 'Delete', item_path(item), method: :delete, data: {confirm: 'Are you sure?'} %></td>

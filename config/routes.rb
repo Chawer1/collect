@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :collections
     resources :items
-    resources :tags, only: [:show]
+    resources :tags, only: [:show, :index]
     resources :posts, shallow: true do
       resources :items
     end
