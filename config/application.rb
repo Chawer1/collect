@@ -7,7 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module Collect
-  class Application < Rails::Application
+  class Application < ActiveSupport::LoggerSilence
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.time_zone = 'Minsk'
