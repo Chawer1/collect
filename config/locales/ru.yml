@@ -12,6 +12,7 @@ ru:
     edit:
       title: 'Редактирование коллекции'
   items:
+    user: 'Автор: '
     index:
       title: 'Айтемы'
     form:

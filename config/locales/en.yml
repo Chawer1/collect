@@ -43,6 +43,7 @@ en:
     edit:
       title: 'Edit collection'
   items:
+    user: 'Author: '
     index:
       title: 'Items'
     form:

@@ -1,21 +1,21 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @posts = Post.all
+    @posts = Post.includes(:user) #.order('created_at DESC')
   end
 
   def show
     @post = Post.find(params[:id])
     @items = Item.where(post_id: [@post])
-    # @users = @user.post
+    # @author = @user.post
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
     # @post = current_user.posts.create(params)
     # @post.user = current_user
     if @post.save
@@ -48,6 +48,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :summary, :topic, :image)
+    params.require(:post).permit(:title, :summary, :topic, :image, :user_id)
   end
 end

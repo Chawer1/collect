@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "user/omniauth_callbacks" }
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
-    # match '/auth/:provider/callback' => 'authentications#create'
+    # get 'authentications#create'
     namespace :admin do
       resources :posts, except: [:show]
-      end
-    resources :posts
+    end
+    namespace :users do
+      resources :posts
+    end
     resources :collections
     resources :items
     resources :tags, only: [:show, :index]
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
       resources :items
     end
     root to: 'posts#index'
+    get '/users/collections', as: 'user_collections'
     get '/users/index', as: 'all_users'
     get '/users/update', as: 'update_users'
     get 'search', to: 'items#search'

@@ -17,7 +17,7 @@ class CreateRedactorAssets < ActiveRecord::Migration[6.0]
     end
 
     # Uncomment it to add foreign key. gem 'foreigner' is required in your .Gemfile
-    # add_foreign_key(:redactor_assets, :users, dependent: :delete)
+    # add_foreign_key(:redactor_assets, :author, dependent: :delete)
     add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_redactor_assetable_type"
     add_index "redactor_assets", ["assetable_type", "assetable_id"], :name => "idx_redactor_assetable"
   end

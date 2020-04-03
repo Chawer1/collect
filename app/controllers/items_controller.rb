@@ -11,7 +11,6 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-
   end
 
   def new
@@ -38,10 +37,6 @@ class ItemsController < ApplicationController
     else
       render :edit, danger: 'Update failed'
     end
-  end
-
-  def find
-    @items = Item.where("name LIKE ?", "%#{value_for_search}%")
   end
 
   def destroy

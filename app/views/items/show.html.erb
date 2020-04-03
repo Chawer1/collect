@@ -1,8 +1,9 @@
 <h1><%= @item.name %></h1>
 <p><%= @item.tag %></p>
 <%= raw @item.tags.map(&:name).map{|t| link_to t, tag_path(t), class: 'badge badge-secondary'}.join(' ') %>
-<%= link_to 'Edit', edit_item_path(@item) %>
-<%= link_to 'Delete', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'} %>
+<%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-outline-dark btn-sm' %>
+<%= link_to 'Delete', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-danger btn-sm' %>
+<%= render 'disqus' %>
 
 <!--<section class="post-body">-->
 <%#= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>

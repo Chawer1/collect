@@ -57,6 +57,11 @@
         <h4 class="nav-link" href="#"><%= link_to t('items.new.title'), new_item_path, class: 'btn btn-outline-light'%>
         </h4>
       </li>
+
+      <li class="nav-item active">
+        <h4 class="nav-link" href="#"><%= link_to 'My posts', user_collections_path, class: "btn btn-outline-light" %></h4>
+      </li>
+
       <% if current_user && current_user.admin %>
       <li class="nav-item active">
         <h4 class="nav-link" href="#"><%= link_to t('users.all_users'), all_users_path, class: "btn btn-outline-light" %></h4>

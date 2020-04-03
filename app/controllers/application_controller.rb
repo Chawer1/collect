@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
   require 'carrierwave'
   require 'carrierwave/orm/activerecord'
   before_action :set_locale
+  protect_from_forgery with: :exception
+  # layout :'user'
+
+  # def for_devise
+  #   'user'
+  # end
 
   private
   def set_locale

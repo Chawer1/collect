@@ -1,8 +1,7 @@
 <h1><%= @post.title %></h1>
-<h4><%=I18n.t('items.category') %>: <%= @post.topic %></h4>
+<p><%=t('items.user') %><%= @post.user.email %></p>
+<h4><%=I18n.t('items.category') %>: <%= @post.topic%></h4>
 <p><%= @post.summary %></p>
-<!--<p><%#= @post.user.email %></p>-->
-
 <br>
 <br>
 <h1><%=I18n.t('items.index.title') %></h1>
@@ -21,12 +20,12 @@
     </tr>
     </thead>
     <tbody>
-    <%#= @users.each do |user| %>
+    <%#= @author.each do |user| %>
 <!--    <li><%#= user.email %></li>-->
     <%= @items.each_with_index do |item, index|%>
       <tr>
         <td><%= index + 1 %></td>
-        <td><%= item.name %></td>
+        <td><%= link_to item.name, item_path(item), class: 'text-dark' %></td>
         <td><%= raw item.tags.map(&:name).map{|t| link_to t, tag_path(t), class: 'badge badge-secondary'}.join(' ') %></td>
         <td><%= link_to 'Edit', edit_item_path(item), class: 'btn btn-outline-dark' %>
         |

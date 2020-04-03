@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  # has_many :posts
+  has_many :posts, :dependent =>:destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -7,6 +7,15 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   validates :password, presence: true
+
+
+  def destroy
+    update_attributes(banned: true) unless banned
+  end
+
+  def active_for_authentication?
+    super && !banned
+  end
 
   def self.new_with_session_fc(params, session)
     super.tap do |user|

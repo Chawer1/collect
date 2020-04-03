@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def collections
+    @collections = current_user.posts.all
+  end
+
   def update
     @users = User.find(params[:id])
     @users.map{|r|
