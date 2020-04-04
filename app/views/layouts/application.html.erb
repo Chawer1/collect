@@ -57,9 +57,9 @@
         <h4 class="nav-link" href="#"><%= link_to t('items.new.title'), new_item_path, class: 'btn btn-outline-light'%>
         </h4>
       </li>
-
+      <% if user_signed_in? %>
       <li class="nav-item active">
-        <h4 class="nav-link" href="#"><%= link_to 'My posts', user_collections_path, class: "btn btn-outline-light" %></h4>
+        <h4 class="nav-link" href="#"><%= link_to t('items.mc'), user_collections_path, class: "btn btn-outline-light" %></h4>
       </li>
 
       <% if current_user && current_user.admin %>
@@ -71,7 +71,6 @@
 <!--        <a class="nav-link disabled" href="#"><%#=t('items.mc')%></a>-->
 <!--      </li>-->
 
-      <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <h4 style="margin-top: 8px; margin-left: 14px"class="btn btn-outline-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%=t('items.account')%>
@@ -79,7 +78,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#"><%= link_to 'Edit', edit_user_registration_path, class: 'btn btn-outline-dark pull-xs-center'%></a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><%= link_to 'Log out', destroy_user_session_path, class: "btn btn-outline-dark", method: :delete %></a>
+            <a class="dropdown-item" href="#"><%= link_to 'Log out', destroy_user_session_path, class: "btn btn-outline-danger", method: :delete %></a>
           </div>
       <% else %>
         <li class="nav-item dropdown">

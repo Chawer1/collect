@@ -56,7 +56,7 @@ en:
     name: 'Name'
     category: 'Category'
     account: 'Account'
-    mc: 'My collection'
+    mc: 'My collections'
     home: 'Home'
   users:
     all_users: 'Users'

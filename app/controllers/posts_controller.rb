@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @posts = Post.includes(:user) #.order('created_at DESC')
+    @posts = Post.includes(:user)
   end
 
   def show
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
   end
 
   def update
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     @post.destroy
     redirect_to posts_path, success: 'Collection delete successful'
   end

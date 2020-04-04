@@ -2,7 +2,7 @@
   <table class="table table-hover">
     <thead class="thead-dark">
     <tr>
-<!--      <th><input type="checkbox" name="checkall" onclick="checkedAll(frm1)" /></th>-->
+      <!--      <th><input type="checkbox" name="checkall" onclick="checkedAll(frm1)" /></th>-->
       <th scope="col">ID</th>
       <th scope="col"><%= t('users.email') %></th>
       <th scope="col"><%= t('users.create_time') %></th>
@@ -16,7 +16,7 @@
     <tbody>
     <% @users.each do |user| %>
       <tr>
-<!--        <td><input type="checkbox" name="foo" value="bar1"/></td>-->
+        <!--        <td><input type="checkbox" name="foo" value="bar1"/></td>-->
         <td><%= user.id %></td>
         <td><%= user.email %></td>
         <td><%= user.created_at %></td>

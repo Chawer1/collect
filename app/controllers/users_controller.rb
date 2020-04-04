@@ -3,6 +3,8 @@ class UsersController < ApplicationController
     @collections = current_user.posts.all
   end
 
+
+
   def update
     @users = User.find(params[:id])
     @users.map{|r|
@@ -24,9 +26,13 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
+
+  def show
+    @users = User.all
+  end
+
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+    @user = User.find(params[:id]).destroy
     redirect_to all_users_path, success: 'User delete successful'
   end
   after_action :user_activity
@@ -38,7 +44,6 @@ class UsersController < ApplicationController
   end
 
 
-  protected
   #
   # def configure_permitted_parameters
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname])
