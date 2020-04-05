@@ -1,17 +1,13 @@
 <h1><%= @post.title %></h1>
 <p><%=t('items.user') %><%= @post.user.email %></p>
 <h4><%=I18n.t('items.category') %>: <%= @post.topic%></h4>
+<br>
 <p><%= @post.summary %></p>
+<h1 style="margin-top: 100px "><%=I18n.t('items.index.title') %></h1>
+<br>
 <!--<div class="button-panel">-->
-  <%#= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-danger btn-sm', style:'margin-top: 12px;' %>
+  <%#= link_to 'New item', new_item_path, class: 'btn btn-outline-primary btn-sm'%>
 <!--</div>-->
-<br>
-<br>
-
-<h1><%=I18n.t('items.index.title') %></h1>
-<br>
-
-
 <section>
   <table class="table">
     <thead class="thead-dark">

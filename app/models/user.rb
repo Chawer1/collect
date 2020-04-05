@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
   validates :email, presence: true
-  validates :password, presence: true
+  # validates :current_password, presence: true
 
 
   def destroy

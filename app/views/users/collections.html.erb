@@ -1,1 +1,5 @@
-<%= render @collections %>
+<% if @collections.empty? %>
+  <h2>У вас нет коллекций</h2>
+  <% else %>
+  <%= render @collections %>
+<% end %>

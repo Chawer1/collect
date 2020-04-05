@@ -11,20 +11,19 @@
       <th><%= t('users.delete') %></th>
     </tr>
     </thead>
-    </head>
     <body>
     <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <!--        <td><input type="checkbox" name="foo" value="bar1"/></td>-->
+    <tr>
+      <% @users.each do |user| %>
         <td><%= user.id %></td>
         <td><%= user.email %></td>
         <td><%= user.created_at %></td>
         <td><%= user.updated_at  %></td>
         <td><%= user.admin? %></td>
         <td><%= link_to 'Delete', users_path(user), method: :delete, class: 'btn btn-outline-danger btn-sm' %></td>
-      </tr>
-    <% end %>
-    </tbody>
+        </tr>
+      <% end %>
+      </tbody>
+    </body>
   </table>
 </form>

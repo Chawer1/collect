@@ -13,15 +13,19 @@
   </div>
 <% end %>
 <%= form_for @item, html: {multipart: true } do |f| %>
+  <form class="form-compact" action="">
+    <div class="row paddingBottom20">
+      <div class="container col-4">
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control'%>
   </div>
 
-  <br class="form-group">
+  <div class="form-group">
     <%= f.label :all_tags %>
     <%= f.text_field :all_tags  , class: 'form-control' %><i>(example: horror, thriller)</i><br><br>
   </div>
+
   <div class="form-group">
     <%= f.label :post_id %>
     <%= f.collection_select :post_id, Post.order(:title), :id, :title, { include_blank: true} , class: 'form-control' %>
@@ -33,3 +37,6 @@
     <%= link_to t('common.back'), :back, class: 'btn btn-outline-secondary' %>
   </div>
 <% end %>
+</div>
+</div>
+</form>

@@ -11,12 +11,10 @@
       <th><%= t('users.delete') %></th>
     </tr>
     </thead>
-    </head>
-    <body>
+  <body>
     <tbody>
-    <% @users.each do |user| %>
       <tr>
-<!--        <td><input type="checkbox" name="foo" value="bar1"/></td>-->
+        <% @users.each do |user| %>
         <td><%= user.id %></td>
         <td><%= user.email %></td>
         <td><%= user.created_at %></td>
@@ -26,5 +24,6 @@
       </tr>
     <% end %>
     </tbody>
+    </body>
   </table>
 </form>

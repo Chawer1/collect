@@ -1,6 +1,8 @@
-<h2>Log in</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <form class="form-compact" action="">
+    <div class="row paddingBottom20">
+      <div class="container col-4">
+        <h2 class="text-center">Log in</h2>
   <div class="form-group">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
@@ -24,3 +26,6 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</form>

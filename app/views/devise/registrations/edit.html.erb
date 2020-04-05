@@ -1,6 +1,20 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+  extendable:focus {
+    position: absolute;
+    width: 110%;
+    top: -1rem;
+  }
+</style>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<form class="form-compact" action="">
+  <div class="row paddingBottom20">
+    <div class="container col-4">
+      <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
+      <div class="row">
+
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="form-group">
@@ -36,5 +50,9 @@
     <%= link_to "Back", :back , class: 'btn btn-outline-dark'%>
   </div>
 <% end %>
-<p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-outline-danger'%></p>
+<p><%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-outline-danger'%></p>
 
+      </div>
+    </div>
+  </div>
+</form>

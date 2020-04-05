@@ -13,6 +13,9 @@
   </div>
   <% end %>
 <%= form_for @post, html: {multipart: true } do |f| %>
+  <form class="form-compact" action="">
+    <div class="row paddingBottom20">
+      <div class="container col-4">
   <div class="form-group">
   <%= f.label :title %>
   <%= f.text_field :title, class: 'form-control'%>
@@ -51,3 +54,6 @@
 
   </div>
 <% end %>
+</div>
+</div>
+</form>
