@@ -12,7 +12,6 @@ gem 'mini_magick'
 gem 'activestorage'
 # gem "azure-storage-blob", require: false
 # gem 'trix-rails', require: 'trix'
-# gem 'dropzonejs-rails'
 gem 'tinymce-rails'
 gem 'ancestry'
 gem 'rails-assets-tether'
