@@ -24,7 +24,7 @@ gem 'rails_12factor', group: :production
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'active_storage_drag_and_drop'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
